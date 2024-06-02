@@ -1,0 +1,193 @@
+body {
+    z-index: -2;
+    overflow: hidden; /* Ini mencegah scrolling di seluruh halaman */
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #000000;
+}
+#bubble-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.bubble {
+    z-index: -1;
+    position: absolute;
+    bottom: -100px; /* Start di bawah layar */
+    background-color: rgba(134, 0, 0, 0.326); /* Warna gelembung transparan */
+    width: 20px;
+    height: 200px;
+    animation: rise 5s infinite, glow 3s infinite ease-in-out; /* Menambahkan animasi glow */
+    box-shadow: 0 0 10px rgba(86, 0, 0, 0.5); /* Initial glow */
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-120vh); /* Bergerak ke atas melewati layar */
+    }
+}
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(62, 0, 0, 0.5); /* Glow lebih redup */
+    }
+    50% {
+        box-shadow: 0 0 25px 10px rgba(66, 0, 0, 0.75); /* Glow lebih terang */
+    }
+}
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* Menambahkan ini untuk memusatkan teks */
+}
+.title {
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+}
+.input-group, .button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.input-group input[type="text"] {
+    width: 15%; /* Mengatur lebar input agar sesuai dengan container */
+    padding: 10px; /* Menambahkan padding untuk kenyamanan ketik */
+    background-color: rgb(33, 33, 33); /* Warna latar belakang hitam */
+    color: rgb(255, 255, 255); /* Warna teks ungu */
+    border: none; /* Menghilangkan border */
+    text-align: center; /* Menengahkan teks yang diketik */
+    border: 1px solid white;
+    border-radius: 15px;
+
+}
+button {
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 11%;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: 0.5s, background-color 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi */
+}
+
+button:hover {
+    border: 1px solid #b30000;
+    background-color: #b30000;
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px #b30000; /* Menambahkan efek glow */
+}
+
+.button2 {
+    margin-bottom: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 11%;
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: 0.5s, background-color 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi */
+}
+
+.button2:hover {
+    border: 1px solid #b30000;
+    background-color: #b30000;
+    box-shadow: 0 0 35px #b30000; /* Menambahkan efek glow */
+}
+.pdf-viewer {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.buttonActive {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #b30000;
+    width: 11%;
+    background-color: #b30000;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: 0.5s, background-color 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi */
+    box-shadow: 0 0 35px #b30000; /* Menyesuaikan warna glow */
+}
+
+.buttonActive:hover {
+    border: 1px solid #b30000;
+    background-color: #b30000;
+    box-shadow: 0 0 35px #b30000; /* Menyesuaikan warna glow */
+}
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: radial-gradient(to circle, rgba(189, 0, 170, 0.718), rgba(94, 0, 84, 0.51));
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out; /* Transisi untuk opasitas */
+
+}
+
+/* Popup Styles */
+.popup-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 50%;
+    max-width: 600px;
+}
+
+.close-button {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #bbb;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #fff;
+}
+

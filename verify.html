@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure ECDSA Blake2B</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="dist/bundle.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Secure ECDSA Blake2B</h1>
+        <button id="signerButton" onclick="window.location.href='index.html';">Signer</button>
+        <button class="buttonActive" id="verifierButton" onclick="window.location.href='verify.html';">Verifier</button>
+
+        <div class="input-group">
+            <input type="file" id="pdfInput" accept=".pdf" style="display:none;">
+            <button class="button2" onclick="document.getElementById('pdfInput').click();">Pilih PDF</button>
+        </div>
+        <div class="input-group">
+            <input type="file" id="publicKeyInput" accept=".pem" style="display:none;">
+            <button class="button2" onclick="document.getElementById('publicKeyInput').click();">Input Kunci</button>
+        </div>
+        <div class="input-group">
+            <input type="text" id="messageInput" placeholder="Masukkan Data">
+        </div>
+        <div class="button-group">
+            <button class="button2" id="verifyPdf">Verify PDF</button>
+
+        </div>
+        <embed id="pdfViewer" type="application/pdf" width="35%" height="475px" style="border: none;">
+        <!-- Tempat untuk menampilkan PDF -->
+    </div>
+    <div id="bubble-container"></div>
+
+    <div id="popup" class="popup-container" style="display:none;">
+        <div class="popup-content">
+            <span id="close" class="close-button">&times;</span>
+            <h2>Notifikasi</h2>
+            <p id="popup-message">Pesan popup akan muncul di sini.</p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>
